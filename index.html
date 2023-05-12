@@ -9,7 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,300&family=Dosis:wght@300&family=Sigmar&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,300&family=Dosis:wght@300&family=Sigmar&display=swap"
         rel="stylesheet">
     <title>Document</title>
 </head>
@@ -17,14 +18,36 @@
 <body>
     <h1>Remove espaços</h1>
     <div id="fundo">
-        <label for="areaText1">Texto</label>
-        <textarea placeholder="Coloque o texto que deseja formatar aqui" id="areaText1" class="areaText" cols="60" rows="10" spellcheck="false"></textarea>
-        <br>
-        <input type="button" onclick="Formatar()" id="btnFormatar" value="Formatar">
-        <br><br>
-        <label for="areaText2">Formatado</label>
-        <textarea placeholder="Texto formatado" id="areaText2" class="areaText" cols="60" rows="10" spellcheck="false"></textarea>
+        <section>
+            <label for="areaText1">Texto</label><br>
+            <div placeholder="Coloque o texto que deseja formatar aqui" id="areaText1" class="areaText" cols="60"
+                rows="10" spellcheck="false" contenteditable="true" style="resize: none;"></div>
+            <input type="button" onclick="Remover()" id="btnFormatar" value="Formatar">
+        </section>
+        <section style="float: right;">
+            <label for="areaText2">Formatado</label><br>
+            <div placeholder="Texto formatado" id="areaText2" class="areaText" cols="60" rows="10" spellcheck="false"
+                contenteditable="true" style="resize: none;"></div>
+            <span id="spanEdit">
+                <!-- italico -->
+                <input type="button" class="btnsEdit" value="Itálico" onclick="Formatar('italic')">
+                <!-- negrito -->
+                <input type="button" class="btnsEdit" value="Negrito" onclick="Formatar('bold')">
+                <!-- underline -->
+                <input type="button" class="btnsEdit" value="Linha" onclick="Formatar('underline')">
+                <!-- cor -->
+            </span>
+            <span id="spanColor">
+                <input type="color" class="btnsEdit" id="cor">
+                <input type="button" class="btnsEdit" value="Aplicar" onclick="Aplicar()">
+            </span>
+        </section>
     </div>
+    <script>
+        function Formatar(command) {
+            document.execCommand(command, false, null);
+        }
+    </script>
 </body>
 
 </html>

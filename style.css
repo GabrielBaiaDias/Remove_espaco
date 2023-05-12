@@ -18,32 +18,54 @@ h1 {
 }
 
 #fundo {
-    width: 470px;
+    min-height: 300px;
     height: auto;
+    width: 1100px;
 
     position: absolute;
-    top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
     font-family: 'Dosis';
     font-weight: bold;
     font-size: 1.1em;
     border-radius: 10px;
+    margin-bottom: 20px;
     padding: 15px;
     border: 5px solid rgb(96, 183, 212);
     background-color: rgb(148, 212, 234);
 }
 
 label {
-    display: block;
+    display: inline-block;
     font-size: 1.2em;
     font-weight: bolder;
 }
 
+section {
+    display: inline-block;
+    position: relative;
+    padding: 2px;
+    height: auto;
+    width: 500px;
+    padding-bottom: 30px;
+}
+
 .areaText {
+    display: block;
     width: 450px;
-    height: 200px;
+    float: left;
+
+    position: relative;
+    top: 50%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: .8em;
+    background-color: white;
+    border-radius: 2px;
+    min-height: 200px;
+    height: auto;
     border: none;
     outline: none;
     user-select: all;
@@ -52,10 +74,50 @@ label {
 }
 
 #btnFormatar {
-    background-color: rgb(65, 162, 192);
+    background-color: #2a90b0;
     border: none;
     padding: 5px;
     font-size: 1em;
     color: white;
-    float: right;
+    /* margin-left: 5px; */
+
+    position: relative;
+    left: 77%;
+
+    border-radius: 3px;
+    /* transform: translateX(-42%); */
+}
+
+section > #spanEdit {
+
+    position: absolute;
+    top: 100%;
+    left: 58.5%;
+    transform: translateY(-100%);
+    display: block;
+}
+
+#spanColor {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+
+    display: block;
+}
+
+.btnsEdit {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #2a90b0;
+    color: white;
+
+}
+
+.btnsEdit:hover, #btnFormatar:hover {
+
+    box-shadow: 1px -1px 0px #186378ce;
+    background-color: #3b9bb8;
+    transform: translate(-1px, 1px);
 }
