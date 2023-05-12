@@ -23,6 +23,6 @@ function Aplicar() {
   document.execCommand('foreColor', false, colorPicker.value);
 }
 
-// function Formatar() {
-//   document.execCommand(command, false, null);
-// }
+function Formatar() {
+  document.execCommand(command, false, null);
+}
